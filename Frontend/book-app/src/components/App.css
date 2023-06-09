@@ -1,0 +1,246 @@
+.title-logo-container {
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  margin-left: 10px;
+}
+
+.title-logo-container img {
+  max-width: 70px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 20px; /* Adjust the top value to lower the links */
+  margin-left: 630px;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin-left: 10px;
+}
+
+.nav li a {
+  text-decoration: none;
+  padding: 10px;
+  color: #333;
+  border-radius: 4px;
+  background-color: #eee;
+  transition: background-color 0.3s ease;
+}
+
+.nav li a:hover {
+  background-color: #ddd;
+}
+
+.nav li a.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.home-container {
+  background-image: url('https://images6.alphacoders.com/346/thumb-1920-346199.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200vh;
+}
+
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-image {
+  max-width: 200px;
+  height: auto;
+}
+
+.book-details {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Remove the white line below the home image and title/logo container */
+.home-container::after{
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: transparent;
+}
+
+
+
+  
+/* Home page */
+  .home-container {
+    background-image: url('https://images6.alphacoders.com/346/thumb-1920-346199.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200vh;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+
+.book-image {
+    max-width: 200px;
+    height: auto;
+}
+
+.book-details{
+  margin-top: 20px;
+  text-align: right;
+}
+
+
+/* Search popup styling */
+.book-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 600px;
+  height: 100px;
+  padding: 1rem;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  margin: 0.5rem;
+}
+
+.book-container:hover {
+  background-color: #e0e0e0;
+}
+
+.book-image {
+  max-width: 200px;
+  height: auto;
+}
+
+.book-title {
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+.search-results-container ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+/* Favorites */
+
+.favorites-page {
+  background-image: url('../favorites.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200vh;
+}
+
+.fav-card {
+  background-color: #f2f2f2;
+}
+
+/* Search */
+.search-bar {
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+
+/* All tittles */
+.favorites-title{
+
+}
+
+.loading-title {
+
+}
+
+.categories-title{
+
+}
+
+.book-form-title {
+  
+}
+
+/* Form */
+.form-page {
+  background-image: url('https://eschlerediting.com/wp-content/uploads/2015/08/photodune-2173383-book-m-1024x683-1024x683.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form-title {
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  margin-bottom: 10px;
+}
+
+.form-input label {
+  font-weight: bold;
+}
+
+.form-input input,
+.form-input textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-button {
+  margin-top: 10px;
+}
