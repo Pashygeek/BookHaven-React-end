@@ -1,0 +1,29 @@
+.about-container{
+    background-image: url('https://mentoringheroes.com/storage/post-images/Reading.jfif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-decoration: underline burlywood;
+    background: -webkit-linear-gradient(#805905, #b7b6b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+  
+  .about-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: justify;
+    background: -webkit-linear-gradient(#b6944b, #531d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+  }  

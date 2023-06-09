@@ -43,7 +43,7 @@ function Categories() {
       <h2 className="categories-title">Categories</h2>
       <Grid templateColumns="repeat(3, 1fr)" gap={4}>
         {categories.map((category) => (
-          <Box
+          <Box className="cat-links"
             key={category.id}
             borderWidth="1px"
             borderRadius="lg"
@@ -51,6 +51,7 @@ function Categories() {
             p={4}
             cursor="pointer"
             onClick={() => setCategoryName(category.name)}
+            _hover={{ backgroundColor: "gray" }}
           >
             <Link to={`/categories/${category.name}`}>
               <Flex direction="column" align="center">
@@ -65,22 +66,27 @@ function Categories() {
 
       {category && (
         <div>
-          <h2>{category.name}</h2>
+          <h2 className="cat-book-tt">{category.name}</h2>
           <Grid templateColumns="repeat(3, 1fr)" gap={4}>
             {category.books.map((book) => (
               <Box
                 key={book.id}
+                
                 borderWidth="1px"
                 borderRadius="lg"
                 overflow="hidden"
                 p={4}
                 boxShadow="md"
+                _hover={{ backgroundColor: "#fff" }
+              } 
               >
+                <Box className="cat-book-card">
                 <Image src={book.image_url} alt={book.title} boxSize="200px" />
                 <Text mt={2} fontWeight="bold">
                   {book.title}
                 </Text>
                 <Text>{book.description}</Text>
+                </Box>
               </Box>
             ))}
           </Grid>

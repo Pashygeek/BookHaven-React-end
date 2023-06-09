@@ -26,7 +26,7 @@ function SearchBar({ searchQuery, handleInputChange, handleSearch }) {
             borderRadius: "10px",
             backgroundColor: "burlywood",
             color: "white",
-            padding: "0.5rem",
+            padding: "0.75rem",
             position: "absolute",
             top: "50%",
             right: "0",

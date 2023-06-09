@@ -1,8 +1,48 @@
 .categories-container {
-    background: url("https://wallpaperaccess.com/full/7006038.jpg"); /* Replace with the path to your background image */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    /* Add any additional styling for the background container */
-  }
-  
+  background: url("https://wallpaperaccess.com/full/7006038.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 250vh;
+}
+
+.categories-container Box {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.categories-container Box:hover {
+  background-color: lightgray;
+}
+
+ .cat-book-card {
+  background-color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cat-book-card:hover {
+  transform: translateY(-4px);
+}
+
+.cat-book-tt{
+  text-align: center;
+  font-size: 2rem;
+  color: burlywood;
+  font-style: bold;
+  text-decoration: underline double;
+}
+
+.cat-links{
+  background-color: #fff;
+}
+
+.categories-title{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  color: peru;
+}

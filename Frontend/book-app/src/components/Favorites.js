@@ -52,13 +52,13 @@ function Favorites() {
 
   return (
     <div className="favorites-page">
-       <Text className="favorites-title" >
+      <Text className="favorites-title" >
         Favorites
       </Text>
       <Box display="flex" flexWrap="wrap" gap="1rem">
         {favorites.map((book) => (
           <Box
-          className="fav-card"
+            className="fav-card"
             key={book.id}
             maxW="250px"
             boxShadow="md"
@@ -75,7 +75,10 @@ function Favorites() {
             <Text fontWeight="bold" mt="1rem">{book.title}</Text>
             <Text>{book.description}</Text>
             <Text>Category: {book.category.name}</Text>
-            <Button mt="1rem">
+            <Button
+              mt="1rem"
+              colorScheme={favorites.some((favBook) => favBook.id === book.id) ? "red" : "blue"}
+            >
               {favorites.some((favBook) => favBook.id === book.id)
                 ? "Remove from Favorites"
                 : "Add to Favorites"}
