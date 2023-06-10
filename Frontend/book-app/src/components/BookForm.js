@@ -8,8 +8,9 @@ import {
   Textarea,
   VStack,
   Image,
+  Select,
 } from '@chakra-ui/react';
-import './App.css'
+import './App.css';
 
 const BookForm = () => {
   const [title, setTitle] = useState('');
@@ -18,6 +19,7 @@ const BookForm = () => {
   const [category, setCategory] = useState('');
   const [image, setImage] = useState('');
   const [addedBook, setAddedBook] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const storedBook = localStorage.getItem('addedBook');
@@ -32,13 +34,25 @@ const BookForm = () => {
     }
   }, [addedBook]);
 
+  useEffect(() => {
+    // Fetch the list of categories from the backend
+    fetch('http://localhost:9292/categories')
+      .then((response) => response.json())
+      .then((data) => {
+        setCategories(data);
+      })
+      .catch((error) => {
+        console.log('Error:', error);
+      });
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const bookData = {
       title: title,
       author: author,
       description: description,
-      category: category.name,
+      category_id: category,
       image_url: image,
     };
 
@@ -77,6 +91,15 @@ const BookForm = () => {
             console.log('Book deleted successfully!');
             localStorage.removeItem('addedBook');
             setAddedBook(null);
+
+            fetch('http://localhost:9292/categories')
+            .then((response)=> response.json())
+            .then((data)=> {
+              setCategories(data);
+            })
+            .catch((error)=> {
+              console.log("Error:", error)
+            })
           } else {
             console.log('Failed to delete the book.');
           }
@@ -93,40 +116,54 @@ const BookForm = () => {
       <form onSubmit={handleSubmit}>
         <VStack spacing={4}>
           <FormControl id="title">
-            <FormLabel className='form-c'>Title:</FormLabel>
-            <Input className='form-input'
+            <FormLabel className="form-c">Title:</FormLabel>
+            <Input
+              className="form-input"
               type="text"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
             />
           </FormControl>
           <FormControl id="author">
-            <FormLabel className='form-c'>Author:</FormLabel>
-            <Input className='form-input'
+            <FormLabel className="form-c">Author:</FormLabel>
+            <Input
+              className="form-input"
               type="text"
               value={author}
               onChange={(event) => setAuthor(event.target.value)}
             />
           </FormControl>
           <FormControl id="description">
-            <FormLabel className='form-c'>Description:</FormLabel>
-            <Textarea className='form-input'
+            <FormLabel className="form-c">Description:</FormLabel>
+            <Textarea
+              className="form-input"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
             />
           </FormControl>
           <FormControl id="category">
-            <FormLabel className='form-c'>Category:</FormLabel>
-            <Input className='form-input'
-              type="text"
+          <FormLabel className="form-c">Category:</FormLabel>
+          {categories.length > 0 ? (
+            <Select
+              className="form-input"
               value={category}
               onChange={(event) => setCategory(event.target.value)}
-            />
-          </FormControl>
+            >
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </Select>
+          ) : (
+            <div>Loading categories...</div>
+          )}
+        </FormControl>
           <FormControl id="image">
-            <FormLabel className='form-c'>Image URL:</FormLabel>
-            <Input className='form-input'
-              type="url"
+            <FormLabel className="form-c">Image URL:</FormLabel>
+            <Input
+              className="form-input"
+              type="string"
               value={image}
               onChange={(event) => setImage(event.target.value)}
             />
@@ -138,23 +175,24 @@ const BookForm = () => {
       </form>
 
       {addedBook && (
-        <Box 
-        className="added-book"
-            maxW="250px"
-            boxShadow="md"
-            borderRadius="md"
-            p="1rem"
-            cursor="pointer"
-            transition="transform 0.3s ease"
-            _hover={{ transform: "scale(1.05)" }}>
+        <Box
+          className="added-book"
+          maxW="250px"
+          boxShadow="md"
+          borderRadius="md"
+          p="1rem"
+          cursor="pointer"
+          transition="transform 0.3s ease"
+          _hover={{ transform: 'scale(1.05)' }}
+        >
           <h3>Added Book:</h3>
           <p>Title: {addedBook.title}</p>
           <p>Author: {addedBook.author}</p>
           <p>Description: {addedBook.description}</p>
-          <p>Category: {addedBook.category}</p>
+          <p>Category: {addedBook.category}</p> {/* Updated to display the category name */}
           <Box>
-            <FormLabel className='form-c'>Image:</FormLabel>
-            <Image src={addedBook.image} alt="Book Image" maxH="200px" />
+            <FormLabel className="form-c">Image:</FormLabel>
+            <Image src={addedBook.image_url} alt="Book Image" maxH="200px" />
           </Box>
           <Button colorScheme="red" onClick={handleRemove}>
             Remove Book

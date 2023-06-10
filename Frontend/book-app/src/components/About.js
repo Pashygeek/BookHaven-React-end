@@ -7,7 +7,7 @@ const About = () => {
       <h1 className='about-title'>About</h1>
       <div className='about-description'>
       <p>
-        Welcome to BookHaven! I am passionate about books and aim is to provide a platform for book lovers to discover and explore their favorite titles.
+        Welcome to BookHaven! I am passionate about books and my aim is to provide a platform for book lovers to discover and explore their favorite titles.
       </p>
       <p>
         My app allows you to search for books, view detailed information about each book, and add books to favorite books and the user can have a personal favorites list. You can also browse books by categories and easily manage your favorites.
