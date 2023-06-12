@@ -24,3 +24,25 @@ The frontend project uses the following dependencies:
 -  React: A JavaScript library for building user interfaces.
 -   Chakra UI: A simple, modular, and accessible component library for React.
 -   Axios: A promise-based HTTP client for making API requests.
+
+## Contributing
+
+If you would like to contribute to this project, please follow the steps below:
+
+-  Fork the repository.
+-   Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature or git checkout -b bugfix/your-bug-fix.`
+-  Commit your changes: `git commit -m "Add your commit message here".`
+-   Push to the branch: `git push` origin your-branch-name.
+-   Submit a pull request.
+
+Please make sure to follow the existing code style and include relevant tests for your changes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+This project was written by <b><i>Patience Wanjiru Mugwe</b></i>. All rights are reserved.
+
+## Contact
+If any issues with the code please feel free to contact me at <i>patiencewanjiru123@gmail.com</i>
