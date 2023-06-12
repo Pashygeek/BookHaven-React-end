@@ -69,7 +69,7 @@ function Home() {
         setSearchResults([]);
       } else {
         const filteredResults = data.filter((book) =>
-          book.title.toLowerCase().charAt(0) === searchQuery.toLowerCase().charAt(0)
+          book.title.toLowerCase().startsWith(searchQuery.toLowerCase())
         );
         setSearchResults(filteredResults);
       }
