@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 import "./Categories.css"; // Import the CSS file for custom styles
 
 function Categories() {
-  const { name } = useParams();
   const [categories, setCategories] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);

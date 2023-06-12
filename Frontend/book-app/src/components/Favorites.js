@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Box, Text, Image, Button } from "@chakra-ui/react";
-import { IconName } from "react-icons/ai";
 import './App.css'
 
 function Favorites() {
